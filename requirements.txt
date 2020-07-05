@@ -1,0 +1,6 @@
+git
+cmake
+g++
+pkg-config
+libsystemd-dev
+sdbus-cpp
