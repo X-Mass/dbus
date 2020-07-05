@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.sdbuscpp.manager
+Exec=/root/omp/server
+User=root
