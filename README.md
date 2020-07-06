@@ -17,15 +17,19 @@ make
 ./registrator (to register some example services)  
 ./opener (to make a request on available apps to open an example file "file.json" and select prefered app)  
 P.S.: apps couldn't be opened yet, but request already works.
-# API
+# API USAGE
+start ./server\
 include register.cpp\
-after that you can use register(std::vector<std::string> formats, std::string name, std::string path)\
+now you can use register(std::vector<std::string> formats, std::string name, std::string path)\
 @param formats contains formats to add.\
 @param name contains name of application.\
 @param path contains application path to future use with exec.\
 @return nothing.\
+\
 include open.cpp\
-Coming soon. Only need to move code from main() to methonds.
+now you can use open(std::string filePath)\
+@param filePath contains path to file you want to open.\
+@return nothing.\
 # Comments
 I heve never seen such a lack of examples of full projects. Just isoleted parts of code given in different sources.  
 I think, that this service is totally irrational and could be much better with correct use of dbus, however examples are needed.
