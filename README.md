@@ -18,6 +18,13 @@ make
 ./opener (to make a request on available apps to open an example file "file.json" and select prefered app)  
 P.S.: apps couldn't be opened yet, but request already works.
 # API
+include register.cpp\
+after that you can use register(std::vector<std::string> formats, std::string name, std::string path)\
+@param formats contains formats to add.\
+@param name contains name of application.\
+@param path contains application path to future use with exec.\
+@return nothing.\
+include register.cpp\
 Coming soon. Only need to move code from main() to methonds.
 # Comments
 I heve never seen such a lack of examples of full projects. Just isoleted parts of code given in different sources.  
