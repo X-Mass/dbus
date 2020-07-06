@@ -24,7 +24,7 @@ after that you can use register(std::vector<std::string> formats, std::string na
 @param name contains name of application.\
 @param path contains application path to future use with exec.\
 @return nothing.\
-include register.cpp\
+include open.cpp\
 Coming soon. Only need to move code from main() to methonds.
 # Comments
 I heve never seen such a lack of examples of full projects. Just isoleted parts of code given in different sources.  
