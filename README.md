@@ -8,7 +8,7 @@ pkg-config
 libsystemd-dev  
 sdbus-cpp  
 You can install all of these using apt-get  
-# How to use
+# How to use an example
 Install all requirements  
 Copy org.sdbuscpp.manager.service to ${datadir}/dbus-1/services  
 cmake .  
@@ -17,6 +17,8 @@ make
 ./registrator (to register some example services)  
 ./opener (to make a request on available apps to open an example file "file.json" and select prefered app)  
 P.S.: apps couldn't be opened yet, but request already works.
+# API
+Coming soon. Only need to move code from main() to methonds.
 # Comments
 I heve never seen such a lack of examples of full projects. Just isoleted parts of code given in different sources.  
 I think, that this service is totally irrational and could be much better with correct use of dbus, however examples are needed.
