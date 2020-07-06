@@ -37,8 +37,11 @@ void open(const std::string& filePath, const std::string& serviceName) {
     std::string str = addresses[serviceName];
     char* const args[] = {const_cast<char*> (str.c_str()), const_cast<char*> (filePath.c_str()), NULL}; 
     const char* interfaceName = "org.sdbuscpp.Manager";
+    pid_t pid = fork();
+    if (pid == 0) {
+        execvp(args[0], args);
+    }
     g_manager->emitSignal("done").onInterface(interfaceName).withArguments(NULL);
-    // execvp(args[0],args);
 
 }
 

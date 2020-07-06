@@ -3,12 +3,10 @@
 #include <string>
 #include <iostream>
 #include <unistd.h>
-#include "open.cpp"
+#include "./serveropen.cpp"
 int main(int argc, char *argv[])
 {
     open("file.json");
-    
-    sleep(1);
     
     return 0;
 }
