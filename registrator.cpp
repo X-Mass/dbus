@@ -4,8 +4,7 @@
 #include <iostream>
 #include <unistd.h>
 
-int main(int argc, char *argv[])
-{
+void main(int argc, char *argv[]) {
     // Create proxy object for the manager object on the server side
     const char* destinationName = "org.sdbuscpp.manager";
     const char* objectPath = "/org/sdbuscpp/manager";

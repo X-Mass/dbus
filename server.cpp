@@ -18,7 +18,7 @@ void registerService(const std::vector<std::string> formatsToOpen, std::string s
         throw sdbus::Error("org.sdbuscpp.Manager.Error", "Service already exists. Delete before reinstalling");
 
     for (auto format : formatsToOpen) {
-        formats[format].push_back(serviceName); //надо ли инициализировать, когда впервые делаешь?
+        formats[format].push_back(serviceName);
     }
     addresses[serviceName]=servicePath;
 }
@@ -27,7 +27,7 @@ std::vector<std::string> getServices(std::string format)
 {
     if (format.empty())
         throw sdbus::Error("org.sdbuscpp.Manager.Error", "Wrong arguements");
-    std::vector<std::string> result = formats[format]; //если ключа нет, всё плохо?
+    std::vector<std::string> result = formats[format];
     const char* interfaceName = "org.sdbuscpp.Manager";
     g_manager->emitSignal("sendServices").onInterface(interfaceName).withArguments(result);
     return result;
@@ -35,13 +35,10 @@ std::vector<std::string> getServices(std::string format)
 
 void open(const std::string& filePath, const std::string& serviceName) {
     std::string str = addresses[serviceName];
-    char* const args[] = {const_cast<char*> (str.c_str()), const_cast<char*> (filePath.c_str()), NULL}; // Глебас, тут ругаются
+    char* const args[] = {const_cast<char*> (str.c_str()), const_cast<char*> (filePath.c_str()), NULL}; 
     const char* interfaceName = "org.sdbuscpp.Manager";
-    std::cout << "1\n";
     g_manager->emitSignal("done").onInterface(interfaceName).withArguments(NULL);
-    std::cout << "2\n";
     // execvp(args[0],args);
-    std::cout << "3\n";
 
 }
 
